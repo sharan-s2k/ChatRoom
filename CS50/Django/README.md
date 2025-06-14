@@ -157,6 +157,10 @@ Eg : <br>
 
 <br>
 
+## Now getting into more things we can do
+
+### Statics
+
 In addition to this we can add static files like CSS in a separate folder called static within out app directory. To link it to the html file we can use `{% load static %}` and to use it within the html we can just `<link rel="stylesheet" href="{% static 'styles.css' %}">`
 
 <details>
@@ -189,4 +193,84 @@ In addition to this we can add static files like CSS in a separate folder called
      └── views.py
  
      6 directories, 18 files
+</details>
+
+### Blocks (Dynamic HTML)
+
+They are a key mechanism for template inheritance, which allows you to create a base (or parent) template with common structure and content, and then customize specific parts in child templates.<br>
+
+A block is marked by `{% block <any_name> %}` and closed by `{% endblock %}`, where <any_name> is a unique identifier for that block.<br>
+
+Any content between the opening and closing of the block is called default content and will be overwritten by the child.
+
+<details>
+<summary>Example</summary>
+ 
+    {% block <any_name> %}
+    <!-- Default content or placeholder -->
+    {% endblock %}
+
+base.html
+
+```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>{% block title %}My Site{% endblock %}</title>
+    </head>
+    <body>
+    <header>
+        <h1>Welcome to My Site</h1>
+    </header>
+    <main>
+        {% block content %}
+        <p>This is the default content.
+           !!!And will not overwritten by the child!!!
+        </p>
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2025 My Site</p>
+    </footer>
+    </body>
+    </html>
+```
+
+child.html
+
+```html
+    {% extends "base.html" %}
+
+    {% block title %}
+    Home - My Site
+    {% endblock %}
+
+    {% block content %}
+    <h2>Welcome to the Home Page</h2>
+    <p>This is the customized content for the home page.</p>
+    {% endblock %}
+```
+
+rendered result
+
+```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Home - My Site</title>
+    </head>
+    <body>
+    <header>
+        <h1>Welcome to My Site</h1>
+    </header>
+    <main>
+        <h2>Welcome to the Home Page</h2>
+        <p>This is the customized content for the home page.</p>
+    </main>
+    <footer>
+        <p>© 2025 My Site</p>
+    </footer>
+    </body>
+    </html>
+```
 </details>
