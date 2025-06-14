@@ -274,3 +274,22 @@ rendered result
     </html>
 ```
 </details>
+
+### Linking Pages
+
+In Django templates, you can create links to other pages.
+
+<!-- This is how we normally would add a link to the page: -->
+```html
+<a href="/tasks/add">Traditional Way</a>
+```
+
+<!-- But we can use Django's url template tag to generate the URL for us: -->
+<!-- This works by referencing the name of the URL pattern we gave in our urls.py file.
+    In this case, the name of the URL pattern is 'add task'. We can see this in the urls.py file in the tasks app. -->
+```html
+<a href="{% url 'tasks:add task' %}">Add Task</a>
+```
+The `{% url %}` tag is preferred because it's more robust to URL changes. If you change the URL path in `urls.py`, you don't need to update it in all your templates, as long as the URL name remains the same. The `'tasks:add task'` syntax refers to the URL pattern named `add task` within the application namespace `tasks`.
+
+

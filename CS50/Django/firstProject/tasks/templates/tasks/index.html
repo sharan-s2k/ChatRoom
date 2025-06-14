@@ -5,6 +5,13 @@
             <li>{{ task }}</li>
         {% endfor %}
     </ul>
+
+<!-- This is how we normally would add a link to the page: -->
+    <a href="/tasks/add">Tradiotional Way</a>
+<!-- But we can use Django's url template tag to generate the URL for us: -->
+<!-- This works by referencing the name of the URL pattern we gave in our urls.py file. 
+     In this case, the name of the URL pattern is 'add task'. We can see this in the urls.py file in the tasks app. -->
+    <a href="{% url 'tasks:add task' %}">Add Task</a>
 {% endblock %}
 <!--  The extends tag is used to extend a base template. -->
 <!-- The block tag is used to define a block that can be overridden by child templates. -->

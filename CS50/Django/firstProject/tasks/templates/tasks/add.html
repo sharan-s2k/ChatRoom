@@ -5,4 +5,9 @@
         <input type="text" name="text">
         <input type="submit">
     </form>
+
+    <a href="{% url 'index' %}">Back to Task List</a>
+<!-- Sometimes there can be a namespace conflict with the url template tag. This happens when you have multiple apps with the same URL pattern name. They might have different views, but the URL pattern name is the same, so Django doesn't know which view to use. -->
+<!-- If this happens, you can use the following syntax to specify the app name: -->
+    <a href="{% url 'tasks:index' %}">No conflict</a>
 {% endblock %}
