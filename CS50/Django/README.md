@@ -100,9 +100,9 @@ Stands for Asynchronous Server Gateway Interface. Similar to wsgi.py, but for as
 <details>
 <summary>Example</summary>
 
-    (myEnv) ssharan@ssharan-mbp firstProject % python manage.py startapp chatRoom 
-    (myEnv) ssharan@ssharan-mbp firstProject % cd chatRoom 
-    (myEnv) ssharan@ssharan-mbp chatRoom % tree
+    (myEnv) ssharan@ssharan-mbp firstProject % python manage.py startapp learn_by_try 
+    (myEnv) ssharan@ssharan-mbp firstProject % cd learn_by_try 
+    (myEnv) ssharan@ssharan-mbp learn_by_try % tree
     .
     ├── __init__.py
     ├── admin.py
@@ -117,18 +117,40 @@ Stands for Asynchronous Server Gateway Interface. Similar to wsgi.py, but for as
 </details>
 
 <br>
+
 Now we have created the app, but we should install it into the project. <br>
-For that we have to go to the settings of out project (firstProject) and just add the app we created under the `INSTALLED_APPS` list
+For that we have to go to the `settings.py` of out project (firstProject) and just add the app we created under the `INSTALLED_APPS` list
 <details>
 <summary>Example</summary>
 
        INSTALLED_APPS = [
-    +       'chatRoom',
+    +       'learn_by_try',
             'django.contrib.admin',
             'django.contrib.auth',
             'django.contrib.contenttypes',
             'django.contrib.sessions',
             'django.contrib.messages',
             'django.contrib.staticfiles',
+        ]
+</details>
+
+<br>
+
+Now if we want to access this app which we have created, we need a url to do that!<br>
+So we have to specify that url in the `urls.py` out project (firstProject)<br>
+Here we can also ask django to import the urls from our app so we can have nested urls<br>
+Eg : <br>
+    - http://127.0.0.1:8000/learn_by_try/ <br>
+    - http://127.0.0.1:8000/is-new-year/<br>
+<details>
+<summary>Example</summary>
+
+        from django.contrib import admin
+        from django.urls import include, path
+
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+    +       path('learn_by_try/', include('learn_by_try.urls')),
+    +       path('is-new-year/', include('newyear.urls')),
         ]
 </details>

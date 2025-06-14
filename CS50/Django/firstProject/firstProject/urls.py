@@ -15,8 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('learn_by_try/', include('learn_by_try.urls')), # Adding this line to include the learn_by_try app's urls.py file to the main project's urls.py file
+    path('is-new-year/', include('newyear.urls')),
 ]

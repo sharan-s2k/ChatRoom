@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ChatroomConfig(AppConfig):
+class NewyearConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'chatRoom'
+    name = 'newyear'
