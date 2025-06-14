@@ -1,0 +1,20 @@
+<!-- This seems to be a bit repetitive. We can use a base template inheritance to avoid this repetition. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+<body>
+    <h2>Add Task</h2>
+    <form>
+        <input type="text" name="text">
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<!-- The entirety of the html is pretty much the same, only the body is different. 
+We can create a base template that contains the common parts of the html and then extend it in the other templates. -->

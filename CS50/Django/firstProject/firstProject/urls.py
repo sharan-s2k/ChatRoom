@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('learn_by_try/', include('learn_by_try.urls')), # Adding this line to include the learn_by_try app's urls.py file to the main project's urls.py file
     path('is-new-year/', include('newyear.urls')),
+    path('tasks/', include('tasks.urls')),
 ]
