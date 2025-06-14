@@ -154,3 +154,39 @@ Eg : <br>
     +       path('is-new-year/', include('newyear.urls')),
         ]
 </details>
+
+<br>
+
+In addition to this we can add static files like CSS in a separate folder called static within out app directory. To link it to the html file we can use `{% load static %}` and to use it within the html we can just `<link rel="stylesheet" href="{% static 'styles.css' %}">`
+
+<details>
+<summary>Example</summary>
+ 
+     myEnvssharan@ssharan-mbp newyear % tree
+     .
+     ├── __init__.py
+     ├── __pycache__
+     │   ├── __init__.cpython-313.pyc
+     │   ├── admin.cpython-313.pyc
+     │   ├── apps.cpython-313.pyc
+     │   ├── models.cpython-313.pyc
+     │   ├── urls.cpython-313.pyc
+     │   └── views.cpython-313.pyc
+     ├── admin.py
+     ├── apps.py
+     ├── migrations
+     │   ├── __init__.py
+     │   └── __pycache__
+     │       └── __init__.cpython-313.pyc
+     ├── models.py
++    ├── static
+     │   └── styles.css
+     ├── templates
+     │   ├── daysToNY.html
+     │   └── isnewyear.html
+     ├── tests.py
+     ├── urls.py
+     └── views.py
+ 
+     6 directories, 18 files
+</details>
