@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-links">
+            <a href="#" id="nav-search" class="nav-link">Google Search</a>
+            <a href="#" id="nav-images" class="nav-link">Images</a>
+            <a href="#" id="nav-advanced" class="nav-link">Advanced Search</a>
+        </div>
+    </nav>
+
+    <!-- Main Search Page -->
+    <div id="search-page" class="page active">
+        <div class="search-container">
+            <div class="logo">
+                <h1>Google</h1>
+            </div>
+            <form id="search-form" class="search-form" method="get" action="https://www.google.com/search" target="_blank">
+                <div class="search-input-container">
+                    <input type="text" name="q" class="search-input" autocomplete="off" required>
+                </div>
+                <div class="search-buttons">
+                    <button type="submit" class="btn btn--secondary search-btn">Google Search</button>
+                    <button type="submit" name="btnI" value="1" class="btn btn--secondary search-btn">I'm Feeling Lucky</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Images Search Page -->
+    <div id="images-page" class="page">
+        <div class="search-container">
+            <div class="logo">
+                <h1>Google <span class="images-text">Images</span></h1>
+            </div>
+            <form id="images-form" class="search-form" method="get" action="https://www.google.com/search" target="_blank">
+                <input type="hidden" name="tbm" value="isch">
+                <div class="search-input-container">
+                    <input type="text" name="q" class="search-input" autocomplete="off" required>
+                </div>
+                <div class="search-buttons">
+                    <button type="submit" class="btn btn--primary search-btn">Image Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Advanced Search Page -->
+    <div id="advanced-page" class="page">
+        <div class="advanced-container">
+            <div class="advanced-header">
+                <h1>Advanced Search</h1>
+            </div>
+            <form id="advanced-form" class="advanced-form" method="get" action="https://www.google.com/search" target="_blank">
+                <div class="advanced-field">
+                    <label for="all-words" class="advanced-label">Find pages with all these words:</label>
+                    <input type="text" id="all-words" name="as_q" class="form-control advanced-input">
+                </div>
+                <div class="advanced-field">
+                    <label for="exact-phrase" class="advanced-label">Find pages with this exact word or phrase:</label>
+                    <input type="text" id="exact-phrase" name="as_epq" class="form-control advanced-input">
+                </div>
+                <div class="advanced-field">
+                    <label for="any-words" class="advanced-label">Find pages with any of these words:</label>
+                    <input type="text" id="any-words" name="as_oq" class="form-control advanced-input">
+                </div>
+                <div class="advanced-field">
+                    <label for="exclude-words" class="advanced-label">Find pages with none of these words:</label>
+                    <input type="text" id="exclude-words" name="as_eq" class="form-control advanced-input">
+                </div>
+                <div class="advanced-buttons">
+                    <button type="submit" class="btn btn--primary advanced-search-btn">Advanced Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

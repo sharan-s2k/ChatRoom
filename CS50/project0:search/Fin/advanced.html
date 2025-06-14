@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container advanced-container">
+        <div class="advanced-header">
+            <div class="advanced-logo">
+                <a href="index.html">
+                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" class="small-logo">
+                </a>
+            </div>
+            <div class="advanced-title">
+                <h1>Advanced Search</h1>
+            </div>
+        </div>
+
+        <div class="advanced-search-section">
+            <div class="advanced-search-heading">
+                <h2>Find pages with...</h2>
+            </div>
+
+            <form action="https://www.google.com/search" method="get" class="advanced-form">
+                <div class="form-group">
+                    <div class="form-label">all these words:</div>
+                    <div class="form-input">
+                        <input type="text" name="as_q" class="advanced-input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label">this exact word or phrase:</div>
+                    <div class="form-input">
+                        <input type="text" name="as_epq" class="advanced-input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label">any of these words:</div>
+                    <div class="form-input">
+                        <input type="text" name="as_oq" class="advanced-input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label">none of these words:</div>
+                    <div class="form-input">
+                        <input type="text" name="as_eq" class="advanced-input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label">file type:</div>
+                    <div class="form-input">
+                        <select name="as_filetype" class="advanced-input">
+                            <option value="">Any Format</option>
+                            <option value="pdf">Adobe Acrobat PDF (.pdf)</option>
+                            <option value="doc">Microsoft Word (.doc)</option>
+                            <option value="docx">Microsoft Word (.docx)</option>
+                            <option value="xls">Microsoft Excel (.xls)</option>
+                            <option value="xlsx">Microsoft Excel (.xlsx)</option>
+                            <option value="ppt">Microsoft PowerPoint (.ppt)</option>
+                            <option value="pptx">Microsoft PowerPoint (.pptx)</option>
+                            <option value="txt">Text (.txt)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="advanced-button-container">
+                    <input type="submit" value="Advanced Search" class="btn btn-blue">
+                </div>
+            </form>
+        </div>
+
+        <div class="search-buttons">
+            <a href="index.html" class="btn btn-primary">Google Search</a>
+            <a href="images.html" class="btn btn-primary">Image Search</a>
+        </div>
+    </div>
+</body>
+</html>
